@@ -1,0 +1,55 @@
+POST http://127.0.0.1:8000/api/register/
+content-type: application/json
+
+{
+    "username": "",
+    "email": "",
+    "password": "",
+    "role": "admin/manager/employee"
+}
+
+
+POST http://127.0.0.1:8000/api/api/token/
+
+{
+    "username": "",
+    "password": "",
+}
+
+POST http://127.0.0.1:8000/api/api/token/refresh/
+
+POST http://127.0.0.1:8000/api/companies/
+{
+    "name": "BrainWise",
+    "number_of_departments": 3,
+    "number_of_employees": 15
+}
+GET http://127.0.0.1:8000/api/companies/
+
+POST http://127.0.0.1:8000/api/departments/
+{
+    "company": 1,  // ID of Brainwise that we just posted
+    "name": "Engineering",
+    "number_of_employees": 10
+}
+
+GET http://127.0.0.1:8000/api/departments/
+
+POST http://127.0.0.1:8000/api/employees/
+{
+    "company": 1,
+    "department": 1,
+    "status": "active",
+    "name": "Ahmed Eladawy",
+    "email": "brainwise@example.com",
+    "mobile_number": "01111111111",
+    "address": "Maadi",
+    "designation": "Software Engineer",
+    "hired_on": "2024-06-07",
+    "days_employed": 1
+}
+
+GET http://127.0.0.1:8000/api/employees/
+
+
+
